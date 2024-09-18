@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as plt
 
 st.sidebar.title('Sidebar')
 # st.title("🎈 Test app")
@@ -37,6 +38,8 @@ if file is not None:
   st.write(df[:num_row][name_column])
  else :
    st.write(df[:num_row])
+fig=plt.scatter(df,x='Quantity',y='OrderValue')
+st.plotly_chart(fig)
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
