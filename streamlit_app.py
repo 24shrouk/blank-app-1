@@ -42,19 +42,22 @@ if file is not None:
  else :
    st.write(df[:num_row])
  num_col=df.select_dtypes(include='number').columns.tolist()
- col1,col2,col3=st.columns(3)
- with col1:
-  x_col=st.selectbox('choose x axis',num_col)
- with col2: 
+ tab1 , tab2=st.tabs(['scatter','histogram'])
+ with tab1:
+  col1,col2,col3=st.columns(3)
+  with col1:
+   x_col=st.selectbox('choose x axis',num_col)
+  with col2: 
    y_col=st.selectbox('choose y axis',num_col)
- with col3:
-  color=st.selectbox('choose color',df.columns.tolist())
- fig=plt.scatter(df,x='Quantity',y='OrderValue')
- st.plotly_chart(fig)
- num_col=df.select_dtypes(include='number').columns.tolist()
- x_col=st.selectbox('choose x axis',num_col)
- fig2=plt.histogram(df,x=x_col)
- st.plotly_chart(fig2)
+  with col3:
+   color=st.selectbox('choose color',df.columns.tolist())
+
+ with tab2:
+  fig=plt.scatter(df,x='Quantity',y='OrderValue')
+  st.plotly_chart(fig)
+  x_col=st.selectbox('choose x axis',num_col)
+  plt.histogram(df,x=x_col)
+
    
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
