@@ -66,6 +66,7 @@
 #     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 # )
 import streamlit as st
-st.header('My first app')
+
 st.set_page_config(page_title='abc',layout='wide')
+st.header('My first app')
 st.sidebar.success('Select a page')
