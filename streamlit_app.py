@@ -51,7 +51,8 @@ if file is not None:
   color=st.selectbox('choose color',df.columns.tolist())
  fig=plt.scatter(df,x='Quantity',y='OrderValue')
  st.plotly_chart(fig)
-  
+x_col=st.selectbox('choose x axis',num_col)
+plt.histogram(df,x=x_col)
    
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
