@@ -73,11 +73,11 @@ st.sidebar.success('Select a page')
 
 st.header('Session state ')
 
-fuirts=[]
-st.session_state.fuirts=[]
+if 'fuirts' not in st.session_state:
+  st.session_state.fuirts=[]
 items = st.text_input('add item')
 btn = st.button('add')
 if btn:
   st.session_state.fuirts.append(items)
 
-  st.write(fuirts)
+st.write(st.session_state.fuirts)
