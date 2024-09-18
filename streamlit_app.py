@@ -54,7 +54,7 @@ if file is not None:
 
  with tab2:
   
-  st.plotly_chart(fig)
+  
   x_col=st.selectbox('choose x axis',num_col)
   fig2=plt.histogram(df,x=x_col)
   st.plotly_chart(fig2)
