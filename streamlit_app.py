@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("🎈 My new app")
+st.title("🎈 Test app")
 name=st.text_input("Enter your name")
 btn= st.button("show")
 if btn:
