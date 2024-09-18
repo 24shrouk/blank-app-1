@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.sidebar.title('Sidebar')
 st.title("🎈 Test app")
 name=st.text_input("Enter your name")
 btn= st.button("show")
