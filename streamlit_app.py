@@ -72,10 +72,12 @@ st.header('My first app')
 st.sidebar.success('Select a page')
 
 st.header('Session state ')
+
 fuirts=[]
+st.session_state.fuirts=[]
 items = st.text_input('add item')
 btn = st.button('add')
 if btn:
-  fuirts.append(items)
+  st.session_state.fuirts.append(items)
 
   st.write(fuirts)
