@@ -32,7 +32,10 @@ if file is not None:
  st.write(df)
  num_row=st.slider('choose num rows' , min_value=1,max_value=len(df),step=1)
  name_column=st.multiselect('choose columns',df.columns.tolist())
- st.write(df[:num_row][name_column])
+ if name_column :
+  st.write(df[:num_row][name_column])
+ else :
+   st.write(df[:num_row])
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
