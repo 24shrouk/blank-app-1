@@ -30,6 +30,8 @@ file=st.file_uploader('Upload a file',type=['csv'])
 if file is not None:
  df=pd.read_csv(file)
  st.write(df)
+num_row=st.slider('choose num rows' , min_value=1,max_value=len(df),step=1)
+st.write(df[:num_row])
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
