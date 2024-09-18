@@ -21,9 +21,9 @@ elif choose == 'circle':
   area=3.14*r*r
 btn=st.button('calculate')
 if btn:
- with st.spinner('Loading....'):
+  with st.spinner('Loading....'):
     time.sleep(5)
-  st.write(f'The area is {area}')
+   st.write(f'The area is {area}')
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
