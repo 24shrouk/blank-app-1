@@ -26,6 +26,7 @@ st.sidebar.title('Sidebar')
 #     #st.time.sleep(2)
 #     st.write(f'The area is {area}')
 
+
 file=st.file_uploader('Upload a file',type=['csv'])
 if file is not None:
  df=pd.read_csv(file)
