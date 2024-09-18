@@ -36,25 +36,20 @@ if file is not None:
  name_column=st.multiselect('choose columns',df.columns.tolist())
  if name_column :
   st.write(df[:num_row][name_column])
-  num_col=df.select_dtypes(include='number').columns.tolist()
-  col1,col2,col3=st.columns(3)
+  
+  fig=plt.scatter(df,x='Quantity',y='OrderValue')
+  st.plotly_chart(fig)
+ else :
+   st.write(df[:num_row])
+ num_col=df.select_dtypes(include='number').columns.tolist()
+ col1,col2,col3=st.columns(3)
  with col1:
   x_col=st.selectbox('choose x axis',num_col)
  with col2: 
    y_col=st.selectbox('choose y axis',num_col)
  with col3:
   color=st.selectbox('choose color',df.columns.tolist())
-
-  fig=plt.scatter(df,x='Quantity',y='OrderValue')
-  st.plotly_chart(fig)
- else :
-   st.write(df[:num_row])
-   num_col=df.select_dtypes(include='number').columns.tolist()
-   x_col=st.selectbox('choose x axis',num_col)
-   y_col=st.selectbox('choose y axis',num_col)
-   color=st.selectbox('choose color',df.columns.tolist())
-   fig=plt.scatter(df,x='Quantity',y='OrderValue')
-   st.plotly_chart(fig)
+  
    
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
