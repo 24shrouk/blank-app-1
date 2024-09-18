@@ -36,7 +36,7 @@ if file is not None:
  name_column=st.multiselect('choose columns',df.columns.tolist())
  if name_column :
   st.write(df[:num_row][name_column])
-  num_col=df.select_dtypes(include='number').columns.tolist())
+  num_col=df.select_dtypes(include='number').columns.tolist()
   col1,col2,col3=st.columns(3)
   with col1:
    x_col=st.selectbox('choose x axis',num_col)
