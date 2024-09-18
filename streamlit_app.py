@@ -51,6 +51,8 @@ if file is not None:
    y_col=st.selectbox('choose y axis',num_col)
   with col3:
    color=st.selectbox('choose color',df.columns.tolist())
+  fig=plt.scatter(df,x='Quantity',y='OrderValue')
+  st.plotly_chart(fig)
 
  with tab2:
   
