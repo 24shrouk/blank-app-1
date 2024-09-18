@@ -1,4 +1,6 @@
-
+import streamlit as st
+import pandas as pd
+import plotly.express as plt
 
 file=st.file_uploader('Upload a file',type=['csv'])
 if file is not None:
