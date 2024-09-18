@@ -51,6 +51,7 @@ if file is not None:
   color=st.selectbox('choose color',df.columns.tolist())
  fig=plt.scatter(df,x='Quantity',y='OrderValue')
  st.plotly_chart(fig)
+ num_col=df.select_dtypes(include='number').columns.tolist()
  x_col=st.selectbox('choose x axis',num_col)
  fig2=plt.histogram(df,x=x_col)
  st.plotly_chart(fig2)
