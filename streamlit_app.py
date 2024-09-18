@@ -70,3 +70,12 @@ import streamlit as st
 st.set_page_config(page_title='abc',layout='wide')
 st.header('My first app')
 st.sidebar.success('Select a page')
+
+st.header('Session state ')
+fuirts=[]
+items = st.text_input('add item')
+btn = st.button('add')
+if btn:
+  fuirts.append(items)
+
+  st.write(fuirts)
