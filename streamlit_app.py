@@ -2,13 +2,13 @@ import streamlit as st
 import pandas as pd
 
 st.sidebar.title('Sidebar')
-st.title("🎈 Test app")
-name=st.text_input("Enter your name")
-btn= st.button("show")
-if btn:
-  st.write(f'Hello {name}')
-with st.sidebar:
-  st.subheader('Select the shape')
+# st.title("🎈 Test app")
+# name=st.text_input("Enter your name")
+# btn= st.button("show")
+# if btn:
+#   st.write(f'Hello {name}')
+# with st.sidebar:
+#   st.subheader('Select the shape')
 
 area=None
 st.header("Calculate Area")
@@ -31,7 +31,8 @@ if file is not None:
  df=pd.read_csv(file)
  st.write(df)
  num_row=st.slider('choose num rows' , min_value=1,max_value=len(df),step=1)
- st.write(df[:num_row])
+ name_column=st.multiselect('choose columns',df.columns.tolist())
+ st.write(df[:num_row][name_column])
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
